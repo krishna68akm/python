@@ -1,0 +1,30 @@
+Import necessary libraries
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Step 1: Data Generation
+# Generate 100 random values for x in the range 0 to 10
+x = np.random.uniform(0, 10, 100)
+
+# Generate 100 random values for y that are approximately linearly related to x with some noise
+noise = np.random.normal(0, 1, 100)
+y = 2 * x + 1 + noise  # y = 2x + 1 is the linear relation with added noise
+# Step 2: Create a DataFrame
+# Create a DataFrame that contains the x and y values
+df = pd.DataFrame({'X': x, 'Y': y})
+
+# Step 3: Plot a Scatterplot
+# Use matplotlib to plot a scatterplot of the x and y values
+plt.figure(figsize=(10, 6))
+plt.scatter(df['X'], df['Y'], color='blue', alpha=0.6)
+
+# Label the x-axis and y-axis
+plt.xlabel('X values')
+plt.ylabel('Y values')
+
+# Title the plot
+plt.title('Scatterplot of X vs Y')
+
+# Display the plot
+plt.show()
